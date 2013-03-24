@@ -1,0 +1,26 @@
+package org.soc.shoppe.site.dao.test;
+
+
+import org.soc.shoppe.site.dao.TestDao;
+import org.soc.shoppe.site.vo.DealVO;
+import org.soc.shoppe.site.vo.ShopVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class TestController {
+	
+	@Autowired
+	private TestDao testDao;
+
+	
+	@RequestMapping(value="/testCreateShop",method=RequestMethod.GET)
+	String testCreate(){
+		//testDao.updateShop();
+		testDao.getDeal(new ShopVO());
+		return null;
+	}
+
+}
